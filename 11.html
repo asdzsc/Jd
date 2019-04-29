@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>简单css轮播图</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body,ul,li,ol,dl,dd,p,h1,h2,h3,h4,h5,h6{margin: 0;}
+			a{text-decoration: none;color: inherit;}
+			img{display: block;border:none;}
+			ol,ul{list-style: none;}
+			.clearfix:after{content: "";display: block;clear: both;}
+			
+			.banner{position: relative;width: 800px;height: 450px;margin: 100px    auto;box-shadow: 0 0 10px 0 #000;}
+			.banner .pic img{width: 800px;height: 450px;}
+			.banner .pic a{position:absolute; left: 0;top: 0;opacity: 0;transition:1s;}
+			.banner .pic a:nth-child(1){opacity: 1;}
+			.banner .dot{position: absolute;bottom: 10px;left:calc(50%-100px);width: 200px;height:30px;}
+			.banner .dot a{float: left; width: 30px;height: 30px;border-radius: 50%;box-shadow: 0 0 10px 0 #000;margin-left: 12px;}
+			.banner .dot a:nth-child(1){margin-left: 0;}
+			.banner .dot a:hover{background:#F0E68C;}
+			.banner .pic a:target{opacity: 1;}
+		
+		</style>
+	</head>
+	<body>
+		<section class="banner">
+			<section class="pic">
+				<a herf="" id="img1"><img alt="" src="img/b1.jpg"></a>
+                <a herf="" id="img2"><img alt="" src="img/b2.jpg"></a> 
+                <a herf="" id="img3"><img alt="" src="img/b3.jpg"></a> 
+                <a herf="" id="img4"><img alt="" src="img/b4.jpg"></a> 
+                <a herf="" id="img5"><img alt="" src="img/b1.jpg"></a>
+			</section>
+			
+			<section class="dot">
+        	    <a href="#img1"></a>
+        	    <a href="#img2"></a>
+        	    <a href="#img3"></a>
+        	    <a href="#img4"></a>
+        	    <a href="#img5"></a>
+            </section>
+        </section>
+        
+        
+	</body>
+</html>

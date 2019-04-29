@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index.html</title>
+	<link rel="stylesheet" href="CSS/common.css">
+	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="CSS/reset.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		button{
+			width: 80px;
+			height: 40px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			top: 100px;
+			background-color: red
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+;(function($){
+	function Carousel($elem,options){
+		// console.log($elem)//jQuery对象
+		//1.罗列属性
+		this.$elem = $elem;
+		this.options = options;
+
+		//2.初始化
+		this.init()
+	}
+	Carousel.prototype = {
+		constructor:Carousel,
+		init:function(){
+			this.$elem.css({
+				width:this.options.width,
+			})
+		},
+	}
+	Carousel.DEFAULTS = {
+		js:true,
+	}
+	$.fn.extend({
+		carousel:function(options){
+			// console.log(this)
+			return this.each(function(){
+				var $elem = $(this);
+				var carousel = $elem.data('carousel')
+					options = $.extend({},Carousel.DEFAULTS,options)
+					carousel = new Carousel($elem,options)	
+					$elem.data('carousel',carousel)
+			})
+		}
+	})
+})(jQuery)
+</script>

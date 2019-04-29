@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>找对称数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+function isNum(start,end){
+	for(var i = start;i<end+1;i++){
+		var str = + (i.toString().split('').reverse().join(''));
+		if(str == i && i > 	10){
+			console.log(i);
+		}
+	}
+}
+isNum(1,10000)
+</script>
+</html>

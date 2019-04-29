@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-显示隐藏-基本-插件测试.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			margin-top: 10px;
+			width: 200px;
+			height: 200px;
+			border: 10px solid blue;
+			padding: 20px;
+			background-color: red;
+			/*display: none;*/
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div class="box" class="transition"></div>
+	<div class="box" class="transition"></div>
+</body>
+<script src="../JS/jquery-1.12.4.js"></script>	
+<script src="../JS/showHide.js"></script>
+<script>
+
+var $elem = $(".box")
+$elem.showHide({
+	js:true,
+	mode:'fadeSlideLeftRight'
+})
+ $elem.on('show shown hide hidden',function(ev){
+ 	// console.log(ev.type)判断触发的是哪个事件
+ 	if (ev.type == 'show') {
+ 		console.log('show ....')
+ 	}else if (ev.type == 'shown') {
+ 		console.log('shown ....')
+ 	}else if (ev.type == 'hide') {
+ 		console.log('hide ....')
+ 	}else if (ev.type == 'hidden') {
+ 		console.log('hidden ....')
+ 	}
+})
+
+$("button").eq(0).on('click',function(){
+	$elem.showHide("show")
+})
+$("button").eq(1).on('click',function(){
+	$elem.showHide("hide")
+})
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>trigger.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			margin-top: 10px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var silent = {
+			show:function($elem){
+				$elem.trigger('show')
+				$elem.show()
+				$elem.trigger('shown')
+			},
+			hide:function($elem){
+				$elem.trigger('hide')
+				$elem.hide()
+				$elem.trigger('hidden')
+			},
+		}
+		var $elem = $('.box') 
+		$elem.on('show shown hide hidden',function(ev){
+			if (ev.type == 'show') {
+				console.log('show')
+			}else if (ev.type ==  'shown') {
+				console.log('shown')
+			}else if (ev.type ==  'hide') {
+				console.log('hide')
+			}else if (ev.type ==  'hidden') {
+				console.log('hidden')
+			}
+		})
+		
+		$('button').eq(0).on('click',function(){
+			silent.show($elem)
+		})
+		$('button').eq(1).on('click',function(){
+			silent.hide($elem)
+		})
+	})
+</script>
+</html>

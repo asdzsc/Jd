@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图.html</title>
+	<link rel="stylesheet" href="CSS/common.css">
+	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="CSS/reset.css">
+	<style>
+	li{
+		list-style: none;
+	}
+	.carousel-wrap{
+		position: relative;
+		overflow: hidden;
+	}
+	.carousel-wrap .carousel-item{
+		position: absolute;
+		left:0;
+		top:0;
+		width: 100%;
+		height: 100%;
+	}
+	.carousel-wrap .btns{
+		position: absolute;
+		left:50%;
+		bottom: 20px;
+	}
+	.carousel-wrap .btn-item{
+		float: left;
+		width: 12px;
+		height: 12px;
+		background: rgba(0,0,0,0.8);
+		border-radius: 50%;
+		margin-right: 5px;
+		cursor: pointer;
+	}
+	.carousel-wrap .btn-item.active{
+		background: #fff;
+	}
+	.carousel-wrap .control {
+		display: none;
+		position: absolute;
+		top:50%;
+		width: 30px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		background: rgba(0,0,0,0.8);
+		font-size: 20px;
+		color: #fff;
+		margin-top: -30px;
+		cursor: pointer;
+		user-select: none;
+	}
+	.carousel-wrap .control-left{
+		left:0;
+	}
+	.carousel-wrap .control-right{
+		right: 0;
+	}
+	.carousel-wrap.fade .carousel-item{
+		display: none;
+	}
+	.carousel-wrap.slide .carousel-item{
+		left:100%;
+	}
+/*轮播图公共样式结束*/
+	.carousel-wrap,
+	.carousel-wrap .carousel-item img {
+		width: 728px;
+		height: 504px;
+		left: 200px;
+	}
+	</style>
+</head>
+<body>
+	<div class="carousel fl">
+		<div class="carousel-wrap slide">
+			<ul class="imgs">
+				<li class="carousel-item">
+					<a href="#">
+						<img class="carousel-img" src="img/b1.jpg" alt="">
+					</a>
+				</li>
+				<li class="carousel-item">
+					<a href="#">
+						<img class="carousel-img" src="img/b2.jpg" alt="">
+					</a>
+				</li>
+				<li class="carousel-item">
+					<a href="#">
+						<img class="carousel-img" src="img/b3.jpg" alt="">
+					</a>
+				</li>
+				<li class="carousel-item">
+					<a href="#">
+						<img class="carousel-img" src="img/b4.jpg" alt="">
+					</a>
+				</li>															
+			</ul>
+			<ul class="btns">
+				<li class="btn-item"></li>
+				<li class="btn-item"></li>
+				<li class="btn-item"></li>
+				<li class="btn-item"></li>
+			</ul>
+			<span class="control control-left">&lt;</span>
+			<span class="control control-right">&gt;</span>
+		</div>			
+	</div>	
+</body>
+<script src="JS/jquery-1.12.4.js"></script>
+<script src="JS/showHide.js"></script>
+<script src="JS/dropdown.js"></script>
+<script src="JS/search.js"></script>
+<script src="JS/carousel.js"></script>
+<script src="JS/index.js"></script>
+</html>
+

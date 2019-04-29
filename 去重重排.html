@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去重重排.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [1,3,5,3,7,1,9,0]
+	function uniqueArray(arr){
+		var result =[];
+		for(var i = 0;i<arr.length;i++){
+			var isUp =false;
+			for(var j=0;j<result.length;j++){
+				if (arr[i] == result[j]) {
+					isUp = true;
+					break;
+				}
+			}
+			if (!isUp) {
+				result.push(arr[i])
+			}
+		}
+		return result;
+	}
+	console.log(arr);
+	var arr1 =uniqueArray(arr);
+	console.log(arr1.sort())
+</script>
+</html>
